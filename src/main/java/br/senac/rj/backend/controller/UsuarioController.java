@@ -2,7 +2,6 @@ package br.senac.rj.backend.controller;
 
 import br.senac.rj.backend.entity.Usuario;
 import br.senac.rj.backend.service.UsuarioService;
-
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;

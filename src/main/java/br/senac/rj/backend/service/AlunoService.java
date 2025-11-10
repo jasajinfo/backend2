@@ -2,7 +2,6 @@ package br.senac.rj.backend.service;
 
 import br.senac.rj.backend.dao.AlunoDao;
 import br.senac.rj.backend.entity.Aluno;
-
 import jakarta.ws.rs.core.Response;
 
 /**
