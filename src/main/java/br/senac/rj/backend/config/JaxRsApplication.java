@@ -18,9 +18,11 @@ public class JaxRsApplication extends Application {
         Set<Class<?>> resources = new HashSet<>();
         // adiciona recursos REST
         resources.add(br.senac.rj.backend.controller.AlunoController.class);
-        resources.add(br.senac.rj.backend.controller.PagamentoController.class);
         resources.add(br.senac.rj.backend.controller.TurmaController.class);
         resources.add(br.senac.rj.backend.controller.UsuarioController.class);
+        // Incluir os controllers do seu projeto
+        resources.add(br.senac.rj.backend.controller.PagamentoController.class);
+
         resources.add(br.senac.rj.backend.filter.AuthFilter.class);
         return resources;
     }
