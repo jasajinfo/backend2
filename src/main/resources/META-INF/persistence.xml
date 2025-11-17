@@ -27,13 +27,12 @@
 	</persistence-unit>
 	<persistence-unit name="backendPU2" transaction-type="RESOURCE_LOCAL">
 		<!-- Classes das tabelas -->
-
 		<class>br.senac.rj.backend.entity.Pagamento</class>
 
 		<properties>
 			<!-- Classes das tabelas -->
 			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/exemplo?useSSL=false&amp;serverTimezone=UTC" />
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pizzaria?useSSL=false&amp;serverTimezone=UTC" />
 			<property name="jakarta.persistence.jdbc.user" value="root" />
 			<property name="jakarta.persistence.jdbc.password" value="" />
 
