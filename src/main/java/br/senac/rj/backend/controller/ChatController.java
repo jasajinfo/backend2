@@ -1,6 +1,6 @@
 package br.senac.rj.backend.controller;
 
-import br.senac.rj.backend.entity.Chat;
+import br.senac.rj.backend.entity.Chatentity;
 import br.senac.rj.backend.service.ChatService;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -24,7 +24,7 @@ public class ChatController {
 
     @POST
     @Path("/salvar")
-    public Response salvar(Chat a) {
+    public Response salvar(Chatentity a) {
         return service.salvar(a);
     }
 

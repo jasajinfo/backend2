@@ -1,6 +1,6 @@
 package br.senac.rj.backend.controller;
 
-import br.senac.rj.backend.entity.Avaliacao;
+import br.senac.rj.backend.entity.Avaliacaoentity;
 import br.senac.rj.backend.service.AvaliacaoService;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -24,7 +24,7 @@ public class AvaliacaoController {
 
     @POST
     @Path("/salvar")
-    public Response salvar(Avaliacao a) {
+    public Response salvar(Avaliacaoentity a) {
         return service.salvar(a);
     }
 

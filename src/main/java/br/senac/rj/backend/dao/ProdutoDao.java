@@ -1,6 +1,6 @@
 package br.senac.rj.backend.dao;
 
-import br.senac.rj.backend.entity.Produto;
+import br.senac.rj.backend.entity.Produtoentity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -8,13 +8,13 @@ import jakarta.persistence.Persistence;
 public class ProdutoDao {
 	private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("backendPU2");
 
-	public Produto salvar(Produto produto) {
+	public Produtoentity salvar(Produtoentity produto) {
 		EntityManager em = emf.createEntityManager();
 		try {
 			em.getTransaction().begin();
-			Produto ProdutotoSalvo = em.merge(produto); // obter objeto completo salvo
+			Produtoentity ProdutoentitytoSalvo = em.merge(produto); // obter objeto completo salvo
 			em.getTransaction().commit();
-			return ProdutoSalvo;
+			return ProdutoentitytoSalvo;
 		} catch (Exception e) {
 			if (em.getTransaction().isActive()) {
 				em.getTransaction().rollback(); // desfazer transações pendentes
@@ -26,10 +26,10 @@ public class ProdutoDao {
 		}
 	}
 
-	public Produto buscarPorId(Long id) {
+	public Produtoentity buscarPorId(Long id) {
 		EntityManager em = emf.createEntityManager();
 		try {
-			return em.find(Produto.class, id);
+			return em.find(Produtoentity.class, id);
 		} finally {
 			em.close();
 		}

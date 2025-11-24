@@ -1,34 +1,34 @@
 package br.senac.rj.backend.service;
 
-import br.senac.rj.backend.dao.PagamentoDao;
-import br.senac.rj.backend.entity.Pagamento;
+import br.senac.rj.backend.dao.ProdutoDao;
+import br.senac.rj.backend.entity.Produtoentity;
 import jakarta.ws.rs.core.Response;
 
 /**
  * 
  * @author reinaldo.jose
- * Classe que tem a função de centralizar a lógica de negócio relacionada à entidade Pagamento.
+ * Classe que tem a função de centralizar a lógica de negócio relacionada à entidade Produto.
  */
 public class ProdutoService {
-    private final PagamentoDao dao = new PagamentoDao();
+    private final ProdutoDao dao = new ProdutoDao();
 
-    public Response salvar(Pagamento pagamento) {
-        Pagamento pagamentoSalvo = dao.salvar(pagamento);
-        if (pagamentoSalvo == null) {
+    public Response salvar(Produtoentity produto) {
+    	Produtoentity produtoSalvo = dao.salvar(produto);
+        if (produtoSalvo == null) {
             return Response.status(Response.Status.BAD_REQUEST)
-            		.entity("{\"erro\":\"Não foi possível salvar o pagamento.\"}")
+            		.entity("{\"erro\":\"Não foi possível salvar o produto.\"}")
             		.build();
         }
-        return Response.ok(pagamentoSalvo).build();
+        return Response.ok(produtoSalvo).build();
     }
 
     public Response buscar(Long id) {
-        Pagamento PagamentoObtido = dao.buscarPorId(id);
-        if (PagamentoObtido == null) {
+    	Produtoentity ProdutoObtido = dao.buscarPorId(id);
+        if (ProdutoObtido == null) {
             return Response.status(Response.Status.NOT_FOUND)
-            		.entity("{\"erro\":\"Pagamento não encontrado.\"}")
+            		.entity("{\"erro\":\"Produto não encontrado.\"}")
             		.build();
         }
-        return Response.ok(PagamentoObtido).build();
+        return Response.ok(ProdutoObtido).build();
     }
 }

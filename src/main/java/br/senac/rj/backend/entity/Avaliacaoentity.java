@@ -1,5 +1,4 @@
 package br.senac.rj.backend.entity;
-AvaliacaoDao.javamodeloDao1.javapackage br.senac.rj.backend.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

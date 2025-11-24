@@ -1,7 +1,7 @@
 package br.senac.rj.backend.controller;
 
-import br.senac.rj.backend.entity.Pagamento;
-import br.senac.rj.backend.service.PagamentoService;
+import br.senac.rj.backend.entity.Produtoentity;
+import br.senac.rj.backend.service.ProdutoService;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -24,7 +24,7 @@ public class ProdutoController {
 
     @POST
     @Path("/salvar")
-    public Response salvar(Produto a) {
+    public Response salvar(Produtoentity a) {
         return service.salvar(a);
     }
 

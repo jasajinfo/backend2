@@ -1,6 +1,6 @@
 package br.senac.rj.backend.controller;
 
-import br.senac.rj.backend.entity.Endereco;
+import br.senac.rj.backend.entity.Enderecoentity;
 import br.senac.rj.backend.service.EnderecoService;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -24,7 +24,7 @@ public class EnderecoConttroller {
 
     @POST
     @Path("/salvar")
-    public Response salvar(Endereco a) {
+    public Response salvar(Enderecoentity a) {
         return service.salvar(a);
     }
 

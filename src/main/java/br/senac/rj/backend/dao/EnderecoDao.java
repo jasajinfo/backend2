@@ -1,6 +1,6 @@
 package br.senac.rj.backend.dao;
 
-import br.senac.rj.backend.entity.Endereco;
+import br.senac.rj.backend.entity.Enderecoentity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -8,13 +8,13 @@ import jakarta.persistence.Persistence;
 public class EnderecoDao {
 	private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("backendPU2");
 
-	public Endereco salvar(Endereco endereco) {
+	public Enderecoentity salvar(Enderecoentity endereco) {
 		EntityManager em = emf.createEntityManager();
 		try {
 			em.getTransaction().begin();
-			Endereco EnderecoSalvo = em.merge(endereco); // obter objeto completo salvo
+			Enderecoentity EnderecoentitySalvo = em.merge(endereco); // obter objeto completo salvo
 			em.getTransaction().commit();
-			return EnderecoSalvo;
+			return EnderecoentitySalvo;
 		} catch (Exception e) {
 			if (em.getTransaction().isActive()) {
 				em.getTransaction().rollback(); // desfazer transações pendentes
@@ -26,10 +26,10 @@ public class EnderecoDao {
 		}
 	}
 
-	public Endereco buscarPorId(Long id) {
+	public Enderecoentity buscarPorId(Long id) {
 		EntityManager em = emf.createEntityManager();
 		try {
-			return em.find(Endereco.class, id);
+			return em.find(Enderecoentity.class, id);
 		} finally {
 			em.close();
 		}

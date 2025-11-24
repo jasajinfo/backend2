@@ -3,7 +3,6 @@ package br.senac.rj.backend.config;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
 /**
@@ -22,6 +21,10 @@ public class JaxRsApplication extends Application {
         resources.add(br.senac.rj.backend.controller.UsuarioController.class);
         // Incluir os controllers do seu projeto
         resources.add(br.senac.rj.backend.controller.PagamentoController.class);
+        resources.add(br.senac.rj.backend.controller.AvaliacaoController.class);
+        resources.add(br.senac.rj.backend.controller.ChatController.class);
+        resources.add(br.senac.rj.backend.controller.EnderecoConttroller.class);
+        resources.add(br.senac.rj.backend.controller.ProdutoController.class);
 
         resources.add(br.senac.rj.backend.filter.AuthFilter.class);
         return resources;
